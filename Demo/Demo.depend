@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1708606918 source:c:\edu\game\demo\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+
+1708936058 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\game\demo\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	"graphics.h"
+
+1708935259 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\game\demo\defs.h
+
+1708935562 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\game\demo\graphics.h
+
+1709486379 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\demo\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	"graphics.h"
+
+1708935259 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\demo\defs.h
+
+1708935562 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\demo\graphics.h
+

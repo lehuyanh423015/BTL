@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1708937258 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\game\event mouse\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	"graphics.h"
+
+1708936512 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\game\event mouse\defs.h
+
+1708936539 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\game\event mouse\graphics.h
+
+1709478672 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\event mouse\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	"graphics.h"
+
+1709478827 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\event mouse\defs.h
+
+1709478785 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\event mouse\graphics.h
+
