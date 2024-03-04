@@ -1,7 +1,7 @@
 #ifndef _LOGIC__H
 #define _logic__H
 
-#define SIZE_X 25
+#define SIZE_X 30
 #define SIZE_Y 15
 #define EMPTY_CELL 2
 #define O_CELL 0
@@ -15,6 +15,7 @@ struct Tictactoe
     int board[SIZE_Y][SIZE_X];
     int nextMove = O_CELL;
     int pt[SIZE_Y][SIZE_X][2][4];
+    bool check = 0;
 
     void init()
     {
@@ -27,10 +28,8 @@ struct Tictactoe
         return row >= 0 && row < SIZE_Y && col >= 0 && col < SIZE_X;
     }
 
-    bool check(int row, int col, int nextMove, int i)
+    void update(int row, int col, int nextMove, int i)
     {
-        if (pt[row][col][nextMove][i] == 5) return true;
-
         int rown = row + dy[i], coln = col + dx[i];
 
         while (inside(rown, coln) && board[rown][coln] == nextMove)
@@ -47,7 +46,15 @@ struct Tictactoe
             rown -= dy[i];
             coln -= dx[i];
         }
+    }
 
+    bool win()
+    {
+        if (check)
+        {
+            nextMove = (nextMove == O_CELL) ? X_CELL : O_CELL;
+            return true;
+        }
         return false;
     }
     void move(int row, int col)
@@ -68,6 +75,10 @@ struct Tictactoe
                 coln = col - dx[i];
                 if (inside(rown, coln) && board[rown][coln] == nextMove)
                     pt[row][col][nextMove][i] += pt[rown][coln][nextMove][i];
+
+                update(row, col, nextMove, i);
+                if (pt[row][col][nextMove][i] == 5) check = 1;
+
             }
             nextMove = (nextMove == O_CELL) ? X_CELL : O_CELL;
         }

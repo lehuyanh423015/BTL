@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1709486450 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\tictoctoe\main.cpp
+1709538612 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\tictoctoe\main.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
 	"defs.h"
 	"graphics.h"
 
-1709487256 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\tictoctoe\defs.h
+1709539133 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\tictoctoe\defs.h
 
 1709487157 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\tictoctoe\graphics.h
 	"logic.h"
 
-1709496831 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\tictoctoe\logic.h
+1709537498 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\tictoctoe\logic.h
 
