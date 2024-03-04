@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1709541372 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\event keyboard\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	"graphics.h"
+
+1709539651 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\event keyboard\defs.h
+
+1709539805 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\event keyboard\graphics.h
+
