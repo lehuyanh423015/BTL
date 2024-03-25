@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1711127793 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\charactermove\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+	"defs.h"
+
+1711127910 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\charactermove\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+	<vector>
+
+1711127812 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\charactermove\defs.h
+
