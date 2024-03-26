@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1711473059 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\sound_music\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+	"defs.h"
+
+1711473076 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\sound_music\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	"defs.h"
+
+1711473058 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\sound_music\defs.h
+

@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1711473555 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\collistion\main.cpp
+	<iostream>
+	<SDL.h>
+	<SDL_image.h>
+	"graphics.h"
+	"defs.h"
+	"game.h"
+
+1711473585 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\collistion\graphics.h
+	<SDL.h>
+	<SDL_image.h>
+	"defs.h"
+
+1711473569 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\collistion\defs.h
+
+1711473612 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\collistion\game.h
+
