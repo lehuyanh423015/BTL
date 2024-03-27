@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1711125272 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\animation\main.cpp
+1711125990 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\animation\main.cpp
 	<iostream>
 	<SDL.h>
 	<SDL_image.h>
@@ -14,5 +14,5 @@
 	<SDL_image.h>
 	"defs.h"
 
-1711125146 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\animation\game.h
+1711125990 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\animation\game.h
 

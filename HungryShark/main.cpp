@@ -11,9 +11,8 @@ int main(int argc, char *argv[])
     Graphics graphics;
     graphics.init();
 
-    Sprite bird;
-    SDL_Texture* birdTexture = graphics.loadTexture(BIRD_SPRITE_FILE);
-    bird.init(birdTexture, BIRD_FRAMES, BIRD_CLIPS);
+    ScrollingBackground background;
+    background.setTexture(graphics.loadTexture(BACKGROUND_IMG));
 
     bool quit = false;
     SDL_Event e;
@@ -21,16 +20,15 @@ int main(int argc, char *argv[])
         while( SDL_PollEvent( &e ) != 0 ) {
             if( e.type == SDL_QUIT ) quit = true;
         }
-        bird.tick();
 
-        graphics.prepareScene();
-        graphics.render(150, 100, bird);
+        background.scroll(1);
+
+        graphics.render(background);
+
         graphics.presentScene();
-        SDL_Delay(200);
     }
 
-	SDL_DestroyTexture( birdTexture ); birdTexture = nullptr;
-
+    SDL_DestroyTexture( background.texture );
     graphics.quit();
     return 0;
 }
