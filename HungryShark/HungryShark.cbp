@@ -32,7 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="AI_prey.h" />
+		<Unit filename="defs.h" />
+		<Unit filename="graphics.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="shark.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

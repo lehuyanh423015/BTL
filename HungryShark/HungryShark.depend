@@ -1,16 +1,23 @@
 # depslib dependency file v1.0
-1711566041 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\main.cpp
-	<iostream>
+1712696068 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\main.cpp
+	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
 	"graphics.h"
 	"defs.h"
+	"shark.h"
 
-1711566451 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\graphics.h
+1712696225 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\graphics.h
 	<SDL.h>
 	<SDL_image.h>
 	"defs.h"
 	<vector>
 
-1711566583 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\defs.h
+1712685943 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\defs.h
+
+1712685021 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\fish.h
+
+1712693278 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\shark.h
 

@@ -46,6 +46,9 @@ struct Graphics {
 
         renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED |
                                               SDL_RENDERER_PRESENTVSYNC);
+        //Khi chạy trong máy ảo (ví dụ phòng máy ở trường)
+        //renderer = SDL_CreateSoftwareRenderer(SDL_GetWindowSurface(window));
+
         if (renderer == nullptr) logErrorAndExit("CreateRenderer", SDL_GetError());
 
         SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
@@ -113,4 +116,3 @@ struct Graphics {
 };
 
 #endif // _GRAPHICS__H
-
