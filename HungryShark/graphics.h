@@ -4,23 +4,6 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include "defs.h"
-#include <vector>
-
-struct ScrollingBackground {
-    SDL_Texture* texture;
-    int scrollingOffset = 0;
-    int width, height;
-
-    void setTexture(SDL_Texture* _texture) {
-        texture = _texture;
-        SDL_QueryTexture(texture, NULL, NULL, &width, &height);
-    }
-
-    void scroll(int distance) {
-        scrollingOffset -= distance;
-        if( scrollingOffset < 0 ) { scrollingOffset = width; }
-    }
-};
 
 struct Graphics {
     SDL_Renderer *renderer;
@@ -37,8 +20,7 @@ struct Graphics {
             logErrorAndExit("SDL_Init", SDL_GetError());
 
         window = SDL_CreateWindow(WINDOW_TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-        //full screen
-        //window = SDL_CreateWindow(WINDOW_TITLE, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_FULLSCREEN_DESKTOP);
+
         if (window == nullptr) logErrorAndExit("CreateWindow", SDL_GetError());
 
         if (!IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG))
@@ -46,8 +28,6 @@ struct Graphics {
 
         renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED |
                                               SDL_RENDERER_PRESENTVSYNC);
-        //Khi chạy trong máy ảo (ví dụ phòng máy ở trường)
-        //renderer = SDL_CreateSoftwareRenderer(SDL_GetWindowSurface(window));
 
         if (renderer == nullptr) logErrorAndExit("CreateRenderer", SDL_GetError());
 
@@ -55,10 +35,10 @@ struct Graphics {
         SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
     }
 
-	void prepareScene(SDL_Texture * background = nullptr)
+	void prepareScene(SDL_Texture * background)
     {
         SDL_RenderClear(renderer);
-        if (background != nullptr) SDL_RenderCopy( renderer, background, NULL, NULL);
+        SDL_RenderCopy( renderer, background, NULL, NULL);
     }
 
     void presentScene()
@@ -107,11 +87,6 @@ struct Graphics {
         SDL_DestroyRenderer(renderer);
         SDL_DestroyWindow(window);
         SDL_Quit();
-    }
-
-    void render(const ScrollingBackground& background) {
-        renderTexture(background.texture, background.scrollingOffset, 0);
-        renderTexture(background.texture, background.scrollingOffset - background.width, 0);
     }
 };
 

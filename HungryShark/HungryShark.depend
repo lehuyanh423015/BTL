@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1712696068 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\main.cpp
+1712773701 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\main.cpp
 	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_image.h>
@@ -7,17 +7,23 @@
 	<SDL_ttf.h>
 	"graphics.h"
 	"defs.h"
+	"fish.h"
 	"shark.h"
+	"prey.h"
 
-1712696225 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\graphics.h
+1712773442 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\graphics.h
 	<SDL.h>
 	<SDL_image.h>
 	"defs.h"
-	<vector>
 
-1712685943 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\defs.h
+1712772722 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\defs.h
 
-1712685021 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\fish.h
+1712772295 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\fish.h
 
-1712693278 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\shark.h
+1712773277 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\shark.h
+	"fish.h"
+	"prey.h"
+
+1712771162 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\prey.h
+	"fish.h"
 
