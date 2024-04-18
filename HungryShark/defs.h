@@ -1,11 +1,14 @@
-#ifndef _DEFS__H
-#define _DEFS__H
+#ifndef DEFS_H
+#define DEFS_H
 
-#define SCREEN_WIDTH 1000
-#define SCREEN_HEIGHT 700
+#include <SDL.h>
+#include <SDL_image.h>
+
+#define SCREEN_WIDTH 955
+#define SCREEN_HEIGHT 560
 #define WINDOW_TITLE "I'm so hungry!"
+#define NUMBERS_PREY 20
 
 #define BACKGROUND_IMG "img\\background.jpg"
-#define MYSHARK "img\\Spongebob.png"
 
 #endif

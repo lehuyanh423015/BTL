@@ -1,42 +1,23 @@
 #ifndef FISH_H
 #define FISH_H
 
-class fish
-{
+#include <SDL.h>
+#include <SDL_image.h>
+
+#include "defs.h"
+
+class Fish {
 public:
-    int level;
+    int level, exp;
     int dx, dy;
     int speed;
     SDL_Rect rect;
 
-    void turnNorth() {
-        dy = -speed;
-        dx = 0;
-    }
-    void turnSouth() {
-        dy = speed;
-        dx = 0;
-    }
-    void turnWest() {
-        dy = 0;
-        dx = -speed;
-    }
-    void turnEast() {
-        dy = 0;
-        dx = speed;
-    }
-    void moving() {
-        rect.x += dx;
-        rect.y += dy;
-    }
-    void speep_up()
-    {
-        speed = 4;
-    }
-    void speep_dn()
-    {
-        speed = 2;
-    }
+    void turnNorth();
+    void turnSouth();
+    void turnWest();
+    void turnEast();
+    void moving();
 };
 
 #endif // FISH_H

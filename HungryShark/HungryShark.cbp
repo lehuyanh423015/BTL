@@ -32,11 +32,19 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="background.cpp" />
+		<Unit filename="background.h" />
 		<Unit filename="defs.h" />
+		<Unit filename="fish.cpp" />
 		<Unit filename="fish.h" />
+		<Unit filename="gameloop.cpp" />
+		<Unit filename="gameloop.h" />
+		<Unit filename="graphics.cpp" />
 		<Unit filename="graphics.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="prey.cpp" />
 		<Unit filename="prey.h" />
+		<Unit filename="shark.cpp" />
 		<Unit filename="shark.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
