@@ -14,7 +14,7 @@ public:
         dx = 0;
         dy = 0;
         speed = 1;
-        level = 1 + rand() % 5;
+        level = 1 + rand() % 7;
         exp = level * 10;
         rect.x = x;
         rect.y = y;

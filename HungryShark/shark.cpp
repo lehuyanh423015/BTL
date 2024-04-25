@@ -1,5 +1,4 @@
 #include "shark.h"
-#include "prey.h"
 
 bool inside(int x, int y, SDL_Rect r) {
     return x >= r.x
@@ -13,6 +12,22 @@ bool overlap(const SDL_Rect& r1, const SDL_Rect& r2) {
         || inside(r1.x + r1.w, r1.y, r2)
         || inside(r1.x, r1.y+r1.h, r2)
         || inside(r1.x+r1.w, r1.y+r1.h, r2);
+}
+
+void Shark::khoitao(Graphics& graphics) {
+    frightTexture = graphics.loadTexture(FISH_RIGHT);
+    fright.init(frightTexture, FRAMES, RIGHT_CLIPS);
+
+    fleftTexture = graphics.loadTexture(FISH_LEFT);
+    fleft.init(fleftTexture, FRAMES, LEFT_CLIPS);
+
+    fupTexture = graphics.loadTexture(FISH_UP);
+    fup.init(fupTexture, FRAMES, UP_CLIPS);
+
+    fdownTexture = graphics.loadTexture(FISH_DOWN);
+    fdown.init(fdownTexture, FRAMES, DOWN_CLIPS);
+
+    sprite = fright;
 }
 
 bool Shark::onScreen() {
@@ -42,18 +57,20 @@ void Shark::eat(const Prey& prey) {
 void Shark::levelUp() {
     exp = exp % (level * 100);
     level += 1;
-    if (level > 6) level = 6;
-    rect.h = level * 10;
-    rect.w = level * 10;
+    if (level > 8) level = 8;
+    rect.h = 36 + (level - 2) * 6;
+    rect.w = 36 + (level - 2) * 6;
 }
 
 void Shark::render(const Graphics& graphics) {
-    SDL_SetRenderDrawColor(graphics.renderer, 125, 180, 150, 135);
-    SDL_RenderFillRect(graphics.renderer, &rect);
+    const SDL_Rect* clip = sprite.getCurrentClip();
+    SDL_Rect renderQuad = {rect.x, rect.y, rect.w, rect.h};
+    SDL_RenderCopy(graphics.renderer, sprite.texture, clip, &renderQuad);
 }
 
 void Shark::len() {
     turnNorth();
+    sprite = fup;
     moving();
     if (! onScreen()) {
         turnSouth();
@@ -63,6 +80,7 @@ void Shark::len() {
 
 void Shark::xuong() {
     turnSouth();
+    sprite = fdown;
     moving();
     if (! onScreen()) {
         turnNorth();
@@ -72,6 +90,7 @@ void Shark::xuong() {
 
 void Shark::trai() {
     turnWest();
+    sprite = fleft;
     moving();
     if (! onScreen()) {
         turnEast();
@@ -81,6 +100,7 @@ void Shark::trai() {
 
 void Shark::phai() {
     turnEast();
+    sprite = fright;
     moving();
     if (! onScreen()) {
         turnWest();

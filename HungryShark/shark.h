@@ -8,20 +8,33 @@
 #include "fish.h"
 #include "defs.h"
 #include "prey.h"
+#include "sprite.h"
 
 class Shark : public Fish {
 public:
+    Sprite fright;
+    Sprite fleft;
+    Sprite fup;
+    Sprite fdown;
+    Sprite sprite;
+
+    SDL_Texture* frightTexture;
+    SDL_Texture* fleftTexture;
+    SDL_Texture* fupTexture;
+    SDL_Texture* fdownTexture;
+
     Shark(int x, int y) {
         dx = 0;
         dy = 0;
-        speed = 2;
+        speed = 3;
         level = 1;
         exp = 0;
         rect.x = x;
         rect.y = y;
-        rect.h = level * 10;
-        rect.w = level * 10;
+        rect.h = level * 36;
+        rect.w = level * 36;
     }
+    void khoitao(Graphics& graphics);
     bool onScreen();
     bool canEat(const Prey& prey);
     bool canNotEat(const Prey& prey);
@@ -35,5 +48,4 @@ public:
     void trai();
     void phai();
 };
-
 #endif // SHARK_H

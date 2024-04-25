@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1713463398 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\main.cpp
+1713994742 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\main.cpp
 	<bits/stdc++.h>
 	<SDL.h>
 	<SDL_image.h>
@@ -12,39 +12,41 @@
 	"prey.h"
 	"background.h"
 	"gameloop.h"
+	"sprite.h"
 
 1713378206 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\graphics.h
 	<SDL.h>
 	<SDL_image.h>
 	"defs.h"
 
-1713463098 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\defs.h
+1713993858 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\defs.h
 	<SDL.h>
 	<SDL_image.h>
 
-1713463098 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\fish.h
+1713991600 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\fish.h
 	<SDL.h>
 	<SDL_image.h>
 	"defs.h"
+	"sprite.h"
 
-1713463098 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\shark.h
+1714003117 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\shark.h
 	<SDL.h>
 	<SDL_image.h>
 	"graphics.h"
 	"fish.h"
 	"defs.h"
 	"prey.h"
+	"sprite.h"
 
-1713468956 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\prey.h
+1714003117 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\prey.h
 	<SDL.h>
 	<SDL_image.h>
 	"graphics.h"
 	"fish.h"
 	"defs.h"
 
-1713463123 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\shark.cpp
+1714003212 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\shark.cpp
 	"shark.h"
-	"prey.h"
 
 1713463123 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\graphics.cpp
 	<SDL.h>
@@ -57,10 +59,10 @@
 1713463123 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\fish.cpp
 	"fish.h"
 
-1713463123 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\background.cpp
+1713994611 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\background.cpp
 	"background.h"
 
-1713463098 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\background.h
+1713994611 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\background.h
 	<SDL.h>
 	<SDL_image.h>
 	"graphics.h"
@@ -68,7 +70,7 @@
 	"shark.h"
 	"prey.h"
 
-1713461459 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\gameloop.cpp
+1713994304 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\gameloop.cpp
 	"gameloop.h"
 
 1713463076 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\gameloop.h
@@ -79,4 +81,13 @@
 	"prey.h"
 	"defs.h"
 	"graphics.h"
+
+1713993951 c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\sprite.h
+	<SDL.h>
+	<SDL_image.h>
+	<vector>
+	"graphics.h"
+
+1713990831 source:c:\users\lehuy\onedrive - vnu.edu.vn\university\semester ii\ltnc\btl\hungryshark\sprite.cpp
+	"sprite.h"
 

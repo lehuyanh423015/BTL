@@ -10,16 +10,15 @@
 #include "prey.h"
 
 class Screen {
-private:
+public:
     Graphics graphics;
     SDL_Texture* background;
 
-public:
     void khoitao();
     void cbiManHinh();
     void inManHinh();
-    void xoaManHinh();
-    void inShark(Shark& shark);
+    void xoaManHinh(Shark& shark);
+    void inShark(Shark& shark, int frame);
     void inPrey(Prey& prey);
 };
 

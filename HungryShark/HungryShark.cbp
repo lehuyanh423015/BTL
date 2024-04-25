@@ -46,6 +46,8 @@
 		<Unit filename="prey.h" />
 		<Unit filename="shark.cpp" />
 		<Unit filename="shark.h" />
+		<Unit filename="sprite.cpp" />
+		<Unit filename="sprite.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

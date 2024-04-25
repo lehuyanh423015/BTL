@@ -5,6 +5,7 @@
 #include <SDL_image.h>
 
 #include "defs.h"
+#include "sprite.h"
 
 class Fish {
 public:
@@ -12,6 +13,7 @@ public:
     int dx, dy;
     int speed;
     SDL_Rect rect;
+    Sprite sprite;
 
     void turnNorth();
     void turnSouth();

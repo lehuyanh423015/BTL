@@ -6,6 +6,6 @@
 #define WINDOW_TITLE "Hello World!"
 
 #define BACKGROUND_IMG "img\\forest.jpg"
-//#define BACKGROUND_IMG "img\\123456.png"
+//#define BACKGROUND_IMG "img\\background.jpg"
 
 #endif
