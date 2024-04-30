@@ -30,14 +30,14 @@ public:
 inline void taoPrey(int type, Prey& prey) {
     int x, y;
     if (type == 1) {
-        x = -50;
+        x = -100;
         y = rand() % SCREEN_HEIGHT;
         prey = Prey(x, y);
         prey.turnEast();
     }
     if (type == 2) {
         x = rand() % SCREEN_WIDTH;
-        y = -50;
+        y = -100;
         prey = Prey(x, y);
         prey.turnSouth();
     }

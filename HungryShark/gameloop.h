@@ -1,9 +1,9 @@
 #ifndef GAMELOOP_H
 #define GAMELOOP_H
 
-#include <vector>
 #include <SDL.h>
 #include <SDL_image.h>
+#include <bits/stdc++.h>
 
 #include "shark.h"
 #include "prey.h"
@@ -20,15 +20,15 @@ private:
     SDL_Event event;
 
 public:
-    vector <Prey> prey;
+    list <Prey> prey;
     Gameloop() : currentKeyStates(SDL_GetKeyboardState(NULL)), quit(false) {}
+
     bool quit;
 
     void checkExit();
     void khoiTaoBanDau();
     void huongDiChuyen(Shark& shark);
-    void conMoiDiChuyen();
-    void caMapDiSan(Shark& shark);
+    void hunting(Shark& shark);
 };
 
 #endif // GAMELOOP_H

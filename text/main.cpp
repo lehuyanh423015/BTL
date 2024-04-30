@@ -23,12 +23,12 @@ int main(int argc, char *argv[])
     Graphics graphics;
     graphics.init();
 
-    TTF_Font* font = graphics.loadFont("assets/Purisa-BoldOblique.ttf", 100);
+    TTF_Font* font = graphics.loadFont("assets/Purisa-BoldOblique.ttf", 20);
 
-    SDL_Color color = {255, 255, 0, 0};
-    SDL_Texture* helloText = graphics.renderText("Hello", font, color);
+    SDL_Color color = {255, 10, 55, 200};
+    SDL_Texture* helloText = graphics.renderText("Lv", font, color);
 
-    graphics.renderTexture(helloText, 200, 200);
+    graphics.renderTexture(helloText, 600, 20);
 
     graphics.presentScene();
     waitUntilKeyPressed();

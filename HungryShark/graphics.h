@@ -3,6 +3,8 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_ttf.h>
+
 #include "defs.h"
 
 struct Graphics {
@@ -17,6 +19,8 @@ struct Graphics {
     void renderTexture(SDL_Texture *texture, int x, int y);
     void blitRect(SDL_Texture *texture, SDL_Rect *src, int x, int y);
     void quit();
+    TTF_Font* loadFont(const char* path, int size);
+    SDL_Texture* renderText(const char* text, TTF_Font* font, SDL_Color textColor);
 };
 
 #endif // _GRAPHICS__H

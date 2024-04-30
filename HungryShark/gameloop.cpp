@@ -2,19 +2,21 @@
 
 void Gameloop::checkExit() {
     while( SDL_PollEvent( &event ) != 0 ) {
-        if(event.type == SDL_QUIT ) quit = true;
+        if(event.type == SDL_QUIT ) {
+                quit = true;
+                continue;
+        }
     }
 }
 
 void Gameloop::khoiTaoBanDau() {
+    Prey temp(0, 0);
     for (int i = 0; i < NUMBERS_PREY; i++) {
         type = 1 + rand() % 4;
-        Prey temp(0, 0);
         taoPrey(type, temp);
         prey.push_back(temp);
     }
     quit = false;
-    loop = 1;
 }
 
 void Gameloop::huongDiChuyen(Shark& shark) {
@@ -24,45 +26,30 @@ void Gameloop::huongDiChuyen(Shark& shark) {
     if (currentKeyStates[SDL_SCANCODE_RIGHT]) shark.phai();
 }
 
-void Gameloop::conMoiDiChuyen() {
-    for (int i = 0; i < NUMBERS_PREY; i++) {
-        prey[i].moving();
-    }
+void Gameloop::hunting(Shark& shark) {
     loop = (loop + 1) % 100;
-    if (loop == 0)
-    {
-        for (int i = 0; i < NUMBERS_PREY; i++)
-        {
+    for (auto it = prey.begin(); it != prey.end(); ++ it) {
+        it->moving();
+        if (loop == 0) {
             type = 1 + rand() % 4;
-            if (type == 1) prey[i].turnNorth();
-            if (type == 2) prey[i].turnSouth();
-            if (type == 3) prey[i].turnWest();
-            if (type == 4) prey[i].turnEast();
-            if (! prey[i].onScreen()) {
-                prey.erase(prey.begin() + i);
-                Prey temp(0, 0);
-                taoPrey(type, temp);
-                prey.push_back(temp);
-            }
+            if (type == 1) it->turnNorth();
+            if (type == 2) it->turnSouth();
+            if (type == 3) it->turnWest();
+            if (type == 4) it->turnEast();
         }
-    }
-}
-
-void Gameloop::caMapDiSan(Shark& shark) {
-    for (int i = 0; i < NUMBERS_PREY; i++)
-    {
-        if (shark.canEat(prey[i]))
-        {
-            shark.eat(prey[i]);
-            loop = 1;
-            prey.erase(prey.begin() + i);
+        if (! it->onScreen()) {
             type = 1 + rand() % 4;
-            Prey temp(0, 0);
-            taoPrey(type, temp);
-            prey.push_back(temp);
+            taoPrey(type, *it);
         }
-        if (shark.canNotEat(prey[i])) {
+        if (shark.canEat(*it))
+        {
+            shark.eat(*it);
+            type = 1 + rand() % 4;
+            taoPrey(type, *it);
+        }
+        if (shark.canNotEat(*it)) {
             quit = true;
+            continue;
         }
     }
     if (shark.canLvUp()) shark.levelUp();

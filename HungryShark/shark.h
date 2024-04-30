@@ -27,12 +27,12 @@ public:
         dx = 0;
         dy = 0;
         speed = 3;
-        level = 1;
+        level = 2;
         exp = 0;
         rect.x = x;
         rect.y = y;
-        rect.h = level * 36;
-        rect.w = level * 36;
+        rect.h = level * 18;
+        rect.w = level * 18;
     }
     void khoitao(Graphics& graphics);
     bool onScreen();

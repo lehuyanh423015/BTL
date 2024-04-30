@@ -12,6 +12,7 @@
 #include "background.h"
 #include "gameloop.h"
 #include "sprite.h"
+#include "font.h"
 
 using namespace std;
 
@@ -26,15 +27,16 @@ int main(int argc, char *argv[])
     shark.khoitao(scr.graphics);
 
     game.khoiTaoBanDau();
+
     while(!game.quit) {
         frame = (frame + 1) % 10;
         scr.cbiManHinh();
         game.checkExit();
         game.huongDiChuyen(shark);
-        game.conMoiDiChuyen();
-        game.caMapDiSan(shark);
+        game.hunting(shark);
         scr.inShark(shark, frame);
-        for (int i = 0; i < NUMBERS_PREY; i++) scr.inPrey(game.prey[i]);
+        for (auto it = game.prey.begin(); it != game.prey.end(); ++ it)
+            scr.inPrey(*it);
         scr.inManHinh();
     }
 

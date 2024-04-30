@@ -46,7 +46,7 @@ bool Shark::canNotEat(const Prey& prey) {
 }
 
 bool Shark::canLvUp() {
-    return exp >= level * 100;
+    return exp >= level * 50;
 }
 
 
@@ -55,7 +55,7 @@ void Shark::eat(const Prey& prey) {
 }
 
 void Shark::levelUp() {
-    exp = exp % (level * 100);
+    exp = exp % (level * 50);
     level += 1;
     if (level > 8) level = 8;
     rect.h = 36 + (level - 2) * 6;

@@ -37,6 +37,8 @@
 		<Unit filename="defs.h" />
 		<Unit filename="fish.cpp" />
 		<Unit filename="fish.h" />
+		<Unit filename="font.cpp" />
+		<Unit filename="font.h" />
 		<Unit filename="gameloop.cpp" />
 		<Unit filename="gameloop.h" />
 		<Unit filename="graphics.cpp" />

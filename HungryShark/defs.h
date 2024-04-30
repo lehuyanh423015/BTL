@@ -7,13 +7,15 @@
 #define SCREEN_WIDTH 955
 #define SCREEN_HEIGHT 560
 #define WINDOW_TITLE "I'm so hungry!"
-#define NUMBERS_PREY 20
+#define NUMBERS_PREY 10
 
 #define BACKGROUND_IMG "img\\background.jpg"
 #define FISH_RIGHT "img\\right.png"
 #define FISH_LEFT "img\\left.png"
 #define FISH_DOWN "img\\down.png"
 #define FISH_UP "img\\up.png"
+
+#define FONT "font\\DancingScript-Bold.ttf"
 
 const int RIGHT_CLIPS[][4] = {
     {  0, 12, 36, 36},
