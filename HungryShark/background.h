@@ -10,14 +10,17 @@
 #include "shark.h"
 #include "prey.h"
 #include "font.h"
+#include "sound.h"
 
 class Screen {
 public:
     Graphics graphics;
     SDL_Texture* background;
     SDL_Texture* pause;
+    SDL_Texture* menu;
 
     void khoitao();
+    void menugame();
     void cbiManHinh();
     void inManHinh();
     void xoaManHinh(Shark& shark);

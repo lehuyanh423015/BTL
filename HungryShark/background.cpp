@@ -3,11 +3,20 @@
 void Screen::khoitao() {
     graphics.init();
     background = graphics.loadTexture(BACKGROUND_IMG);
+    pause = graphics.loadTexture(PAUSE);
+    menu = graphics.loadTexture(MENU);
+
+}
+
+void Screen::menugame() {
+    graphics.prepareScene(menu);
+    SDL_RenderCopy(graphics.renderer, menu, NULL, NULL);
 }
 
 void Screen::cbiManHinh() {
     graphics.prepareScene(background);
     SDL_RenderCopy(graphics.renderer, background, NULL, NULL);
+    graphics.renderPicture(pause, 10, 10, 40, 40);
 }
 
 void Screen::inManHinh() {
@@ -17,6 +26,10 @@ void Screen::inManHinh() {
 void Screen::xoaManHinh(Shark& shark) {
     SDL_DestroyTexture(background);
     background = nullptr;
+
+    SDL_DestroyTexture(pause);
+    pause = nullptr;
+
 
     SDL_DestroyTexture(shark.frightTexture);
     shark.frightTexture = nullptr;
@@ -30,6 +43,7 @@ void Screen::xoaManHinh(Shark& shark) {
     SDL_DestroyTexture(shark.fdownTexture);
     shark.fdownTexture = nullptr;
 
+
     graphics.quit();
 }
 
@@ -40,9 +54,11 @@ void Screen::inShark(Shark& shark, int frame) {
     Font level(lv.c_str(), 24);
     string ex = "Exp: " + to_string(shark.exp)
             + "/" + to_string(shark.level * 50);
+    if (shark.level == 8) ex = "Exp: " + to_string(shark.exp)
+            + "/ oo";
     Font exp(ex.c_str(), 24);
-    level.renderText(800, 25, graphics);
-    exp.renderText(800, 60, graphics);
+    level.renderText(820, 10, graphics);
+    exp.renderText(820, 40, graphics);
 
     SDL_DestroyTexture(level.Text);
     TTF_CloseFont(level.font);

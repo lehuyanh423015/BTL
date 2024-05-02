@@ -3,12 +3,15 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_mixer.h>
 #include <bits/stdc++.h>
 
 #include "shark.h"
 #include "prey.h"
 #include "defs.h"
 #include "graphics.h"
+#include "sound.h"
+#include "background.h"
 
 using namespace std;
 
@@ -18,6 +21,8 @@ private:
     int loop;
     const Uint8* currentKeyStates;
     SDL_Event event;
+    Sound sound;
+    Screen scr;
 
 public:
     list <Prey> prey;

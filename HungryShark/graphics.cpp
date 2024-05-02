@@ -31,7 +31,12 @@ void Graphics::init() {
 
     if (TTF_Init() == -1) {
         logErrorAndExit("SDL_ttf could not initialize! SDL_ttf Error: ",
-                         TTF_GetError());
+                        TTF_GetError());
+    }
+
+    if(Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 ) {
+        logErrorAndExit("SDL_mixer could not initialize! SDL_mixer Error: %s\n",
+                        Mix_GetError());
     }
 }
 
@@ -68,6 +73,18 @@ void Graphics::renderTexture(SDL_Texture *texture, int x, int y)
     SDL_RenderCopy(renderer, texture, NULL, &dest);
 }
 
+void Graphics::renderPicture(SDL_Texture *texture, int x, int y, int w, int h)
+{
+    SDL_Rect dest;
+
+    dest.x = x;
+    dest.y = y;
+    dest.w = w;
+    dest.h = h;
+
+    SDL_RenderCopy(renderer, texture, NULL, &dest);
+}
+
 void Graphics::blitRect(SDL_Texture *texture, SDL_Rect *src, int x, int y)
 {
     SDL_Rect dest;
@@ -82,6 +99,8 @@ void Graphics::blitRect(SDL_Texture *texture, SDL_Rect *src, int x, int y)
 
 void Graphics::quit()
 {
+
+    Mix_Quit();
     TTF_Quit();
     IMG_Quit();
 
@@ -111,4 +130,39 @@ SDL_Texture* Graphics::renderText(const char* text, TTF_Font* font, SDL_Color te
 
     SDL_FreeSurface( textSurface );
     return texture;
+}
+
+Mix_Music* Graphics::loadMusic(const char* path) {
+    Mix_Music *gMusic = Mix_LoadMUS(path);
+    if (gMusic == nullptr) {
+        SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_ERROR,
+                       "Could not load music! SDL_mixer Error: %s", Mix_GetError());
+    }
+    return gMusic;
+}
+
+void Graphics::play(Mix_Music *gMusic) {
+    if (gMusic == nullptr) return;
+
+    if (Mix_PlayingMusic() == 0) {
+        Mix_PlayMusic( gMusic, -1 );
+    }
+    else if( Mix_PausedMusic() == 1 ) {
+        Mix_ResumeMusic();
+    }
+}
+
+Mix_Chunk* Graphics::loadSound(const char* path) {
+    Mix_Chunk* gChunk = Mix_LoadWAV(path);
+    if (gChunk == nullptr) {
+        SDL_LogMessage(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_ERROR,
+                   "Could not load sound! SDL_mixer Error: %s", Mix_GetError());
+    }
+    return gChunk;
+}
+
+void Graphics::play(Mix_Chunk* gChunk) {
+    if (gChunk != nullptr) {
+        Mix_PlayChannel( -1, gChunk, 0 );
+    }
 }

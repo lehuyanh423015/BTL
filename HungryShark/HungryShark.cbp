@@ -48,6 +48,8 @@
 		<Unit filename="prey.h" />
 		<Unit filename="shark.cpp" />
 		<Unit filename="shark.h" />
+		<Unit filename="sound.cpp" />
+		<Unit filename="sound.h" />
 		<Unit filename="sprite.cpp" />
 		<Unit filename="sprite.h" />
 		<Extensions>

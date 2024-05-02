@@ -9,13 +9,22 @@
 #define WINDOW_TITLE "I'm so hungry!"
 #define NUMBERS_PREY 10
 
+//image
 #define BACKGROUND_IMG "img\\background.jpg"
+#define PAUSE "img\\pause.png"
+#define MENU "img\\menu.png"
 #define FISH_RIGHT "img\\right.png"
 #define FISH_LEFT "img\\left.png"
 #define FISH_DOWN "img\\down.png"
 #define FISH_UP "img\\up.png"
 
+//font
 #define FONT "font\\DancingScript-Bold.ttf"
+
+//sound
+#define MUSIC "sound\\music.mp3"
+#define END_GAME "sound\\end_game.mp3"
+#define BITE_WAV "sound\\bite.wav"
 
 const int RIGHT_CLIPS[][4] = {
     {  0, 12, 36, 36},

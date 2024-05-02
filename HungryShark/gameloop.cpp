@@ -17,6 +17,7 @@ void Gameloop::khoiTaoBanDau() {
         prey.push_back(temp);
     }
     quit = false;
+    sound.nhacNen();
 }
 
 void Gameloop::huongDiChuyen(Shark& shark) {
@@ -43,11 +44,13 @@ void Gameloop::hunting(Shark& shark) {
         }
         if (shark.canEat(*it))
         {
+            sound.nhac_bite();
             shark.eat(*it);
             type = 1 + rand() % 4;
             taoPrey(type, *it);
         }
         if (shark.canNotEat(*it)) {
+            sound.end_game();
             quit = true;
             continue;
         }

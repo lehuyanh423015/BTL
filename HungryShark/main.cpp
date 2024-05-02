@@ -3,6 +3,7 @@
 #include <SDL_image.h>
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 
 #include "graphics.h"
 #include "defs.h"
@@ -16,6 +17,17 @@
 
 using namespace std;
 
+void waitUntilKeyPressed()
+{
+    SDL_Event e;
+    while (true) {
+        if ( SDL_PollEvent(&e) != 0 &&
+             (e.type == SDL_KEYDOWN || e.type == SDL_QUIT) )
+            return;
+        SDL_Delay(100);
+    }
+}
+
 int main(int argc, char *argv[])
 {
     srand(time(0));
@@ -27,6 +39,10 @@ int main(int argc, char *argv[])
     shark.khoitao(scr.graphics);
 
     game.khoiTaoBanDau();
+
+    scr.menugame();
+    scr.inManHinh();
+    waitUntilKeyPressed();
 
     while(!game.quit) {
         frame = (frame + 1) % 10;
