@@ -11,18 +11,19 @@
 #include "sprite.h"
 
 class Shark : public Fish {
-public:
+private:
     Sprite fright;
     Sprite fleft;
     Sprite fup;
     Sprite fdown;
-    Sprite sprite;
 
     SDL_Texture* frightTexture;
     SDL_Texture* fleftTexture;
     SDL_Texture* fupTexture;
     SDL_Texture* fdownTexture;
 
+public:
+    Sprite sprite;
     Shark(int x, int y) {
         dx = 0;
         dy = 0;
@@ -34,15 +35,20 @@ public:
         rect.h = level * 18;
         rect.w = level * 18;
     }
-    void khoitao(Graphics& graphics);
+
+    void init_shark(Graphics& graphics);
+    void render_shark(Graphics& graphics);
+    void xoa_shark();
+
     bool onScreen();
+
     bool canEat(const Prey& prey);
     bool canNotEat(const Prey& prey);
-    bool canLvUp();
-
     void eat(const Prey& prey);
+
+    bool canLvUp();
     void levelUp();
-    void render(const Graphics& graphics);
+
     void len();
     void xuong();
     void trai();

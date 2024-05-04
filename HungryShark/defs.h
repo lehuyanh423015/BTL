@@ -7,12 +7,13 @@
 #define SCREEN_WIDTH 955
 #define SCREEN_HEIGHT 560
 #define WINDOW_TITLE "I'm so hungry!"
-#define NUMBERS_PREY 10
 
 //image
-#define BACKGROUND_IMG "img\\background.jpg"
+#define BACKGROUND "img\\background.jpg"
 #define PAUSE "img\\pause.png"
 #define MENU "img\\menu.png"
+#define DIED "img\\died.jpg"
+#define G_PAUSE "img\\game_pause.jpg"
 #define FISH_RIGHT "img\\right.png"
 #define FISH_LEFT "img\\left.png"
 #define FISH_DOWN "img\\down.png"
@@ -23,7 +24,6 @@
 
 //sound
 #define MUSIC "sound\\music.mp3"
-#define END_GAME "sound\\end_game.mp3"
 #define BITE_WAV "sound\\bite.wav"
 
 const int RIGHT_CLIPS[][4] = {

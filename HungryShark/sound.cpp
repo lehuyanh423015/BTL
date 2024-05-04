@@ -15,10 +15,3 @@ void Sound::nhac_bite() {
         if (gBite != nullptr) Mix_FreeChunk( gBite);
     }
 }
-
-void Sound::end_game()
-{
-    if (gMusic != nullptr) Mix_FreeMusic( gMusic );
-    gEnd = loadMusic(END_GAME);
-    play(gEnd);
-}

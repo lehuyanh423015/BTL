@@ -13,19 +13,38 @@
 #include "sound.h"
 
 class Screen {
-public:
-    Graphics graphics;
+private:
     SDL_Texture* background;
     SDL_Texture* pause;
     SDL_Texture* menu;
+    SDL_Texture* gPause;
+    SDL_Texture* died;
+    Sound sound;
 
-    void khoitao();
-    void menugame();
-    void cbiManHinh();
-    void inManHinh();
-    void xoaManHinh(Shark& shark);
-    void inShark(Shark& shark, int frame);
-    void inPrey(Prey& prey);
+public:
+    Graphics graphics;
+
+    void init_grap_music();
+
+    void init_menu();
+    void render_menu();
+    void xoa_menu();
+
+    void init_gameplay();
+    void render_gameplay();
+    void xoa_gamePlay();
+
+    void init_pause();
+    void render_pause();
+    void xoa_pause();
+
+    void init_died();
+    void render_died();
+    void xoa_died();
+
+    void render_shark(Shark& shark, int frame);
+
+    void render_prey(Prey& prey);
 };
 
 #endif // BACKGROUND_H

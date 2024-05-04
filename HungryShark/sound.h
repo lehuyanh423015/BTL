@@ -16,7 +16,6 @@ private:
 public:
     void nhacNen();
     void nhac_bite();
-    void end_game();
 };
 
 #endif // SOUND_H

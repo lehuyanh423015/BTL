@@ -14,7 +14,7 @@ bool overlap(const SDL_Rect& r1, const SDL_Rect& r2) {
         || inside(r1.x+r1.w, r1.y+r1.h, r2);
 }
 
-void Shark::khoitao(Graphics& graphics) {
+void Shark::init_shark(Graphics& graphics) {
     frightTexture = graphics.loadTexture(FISH_RIGHT);
     fright.init(frightTexture, FRAMES, RIGHT_CLIPS);
 
@@ -28,6 +28,26 @@ void Shark::khoitao(Graphics& graphics) {
     fdown.init(fdownTexture, FRAMES, DOWN_CLIPS);
 
     sprite = fright;
+}
+
+void Shark::render_shark(Graphics& graphics) {
+    const SDL_Rect* clip = sprite.getCurrentClip();
+    SDL_Rect renderQuad = {rect.x, rect.y, rect.w, rect.h};
+    SDL_RenderCopy(graphics.renderer, sprite.texture, clip, &renderQuad);
+}
+
+void Shark::xoa_shark() {
+    SDL_DestroyTexture(fdownTexture);
+    fdownTexture = nullptr;
+
+    SDL_DestroyTexture(fupTexture);
+    fupTexture = nullptr;
+
+    SDL_DestroyTexture(frightTexture);
+    frightTexture = nullptr;
+
+    SDL_DestroyTexture(fleftTexture);
+    fleftTexture = nullptr;
 }
 
 bool Shark::onScreen() {
@@ -59,12 +79,6 @@ void Shark::levelUp() {
     level += 1;
     rect.h = 36 + (level - 2) * 8;
     rect.w = 36 + (level - 2) * 8;
-}
-
-void Shark::render(const Graphics& graphics) {
-    const SDL_Rect* clip = sprite.getCurrentClip();
-    SDL_Rect renderQuad = {rect.x, rect.y, rect.w, rect.h};
-    SDL_RenderCopy(graphics.renderer, sprite.texture, clip, &renderQuad);
 }
 
 void Shark::len() {

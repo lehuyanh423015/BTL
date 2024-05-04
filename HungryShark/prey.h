@@ -24,7 +24,7 @@ public:
 
     bool onScreen();
 
-    void render(const Graphics& graphics) const;
+    void render(const Graphics& graphics);
 };
 
 inline void taoPrey(int type, Prey& prey) {

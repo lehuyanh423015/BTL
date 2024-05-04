@@ -20,20 +20,19 @@ private:
     int type;
     int loop;
     const Uint8* currentKeyStates;
-    SDL_Event event;
-    Sound sound;
-    Screen scr;
 
 public:
-    list <Prey> prey;
+    Sound sound;
+    vector <Prey> prey;
     Gameloop() : currentKeyStates(SDL_GetKeyboardState(NULL)), quit(false) {}
 
     bool quit;
+    bool died;
 
-    void checkExit();
-    void khoiTaoBanDau();
-    void huongDiChuyen(Shark& shark);
-    void hunting(Shark& shark);
+    void init_prey();
+
+    void shark_moving(Shark& shark);
+    void shark_hunting(Shark& shark);
 };
 
 #endif // GAMELOOP_H

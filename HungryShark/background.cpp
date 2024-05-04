@@ -1,55 +1,73 @@
 #include "background.h"
 
-void Screen::khoitao() {
+void Screen::init_grap_music() {
     graphics.init();
-    background = graphics.loadTexture(BACKGROUND_IMG);
-    pause = graphics.loadTexture(PAUSE);
-    menu = graphics.loadTexture(MENU);
-
+    sound.nhacNen();
 }
 
-void Screen::menugame() {
+void Screen::init_menu() {
+    menu = graphics.loadTexture(MENU);
+}
+void Screen::render_menu() {
+
     graphics.prepareScene(menu);
     SDL_RenderCopy(graphics.renderer, menu, NULL, NULL);
+    graphics.presentScene();
 }
 
-void Screen::cbiManHinh() {
+void Screen::xoa_menu() {
+    SDL_DestroyTexture(menu);
+    menu = nullptr;
+}
+
+void Screen::init_gameplay() {
+    background = graphics.loadTexture(BACKGROUND);
+    pause = graphics.loadTexture(PAUSE);
+}
+
+void Screen::render_gameplay() {
     graphics.prepareScene(background);
     SDL_RenderCopy(graphics.renderer, background, NULL, NULL);
     graphics.renderPicture(pause, 10, 10, 40, 40);
 }
 
-void Screen::inManHinh() {
-    graphics.presentScene();
-}
-
-void Screen::xoaManHinh(Shark& shark) {
+void Screen::xoa_gamePlay() {
     SDL_DestroyTexture(background);
     background = nullptr;
 
     SDL_DestroyTexture(pause);
     pause = nullptr;
-
-
-    SDL_DestroyTexture(shark.frightTexture);
-    shark.frightTexture = nullptr;
-
-    SDL_DestroyTexture(shark.fleftTexture);
-    shark.fleftTexture = nullptr;
-
-    SDL_DestroyTexture(shark.fupTexture);
-    shark.fupTexture = nullptr;
-
-    SDL_DestroyTexture(shark.fdownTexture);
-    shark.fdownTexture = nullptr;
-
-
-    graphics.quit();
 }
 
-void Screen::inShark(Shark& shark, int frame) {
+void Screen::init_pause() {
+    gPause = graphics.loadTexture(G_PAUSE);
+}
+
+void Screen::render_pause() {
+    graphics.renderPicture(gPause, 250, 150, 460, 260);
+}
+
+void Screen::xoa_pause() {
+    SDL_DestroyTexture(gPause);
+    gPause = nullptr;
+}
+
+void Screen::init_died() {
+    died = graphics.loadTexture(DIED);
+}
+
+void Screen::render_died() {
+    graphics.renderPicture(died, 120, 80, 720, 405);
+}
+
+void Screen::xoa_died() {
+    SDL_DestroyTexture(died);
+    died = nullptr;
+}
+
+void Screen::render_shark(Shark& shark, int frame) {
     if (frame == 0) shark.sprite.tick();
-    shark.render(graphics);
+    shark.render_shark(graphics);
     string lv = "Level: " + to_string(shark.level);
     Font level(lv.c_str(), 24);
     string ex = "Exp: " + to_string(shark.exp)
@@ -67,7 +85,7 @@ void Screen::inShark(Shark& shark, int frame) {
     TTF_CloseFont(exp.font);
 }
 
-void Screen::inPrey(Prey& prey) {
+void Screen::render_prey(Prey& prey) {
     prey.render(graphics);
     string lv = "Lv: " + to_string(prey.level);
     Font level(lv.c_str(), 20);

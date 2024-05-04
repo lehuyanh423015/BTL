@@ -7,7 +7,7 @@ bool Prey::onScreen() {
         && rect.y + rect.h >= 0;
 }
 
-void Prey::render(const Graphics& graphics) const {
+void Prey::render(const Graphics& graphics) {
     SDL_SetRenderDrawColor(graphics.renderer, 255, 255, 0, 255); // green
     SDL_RenderFillRect(graphics.renderer, &rect);
 }
